@@ -7,8 +7,8 @@ ReadConfig().test_login(config['url'])
 
 
 class getStore(unittest.TestCase):
-    """获取店铺追踪列表的接口测试用例"""
     def test_getData(self):
+        """获取店铺追踪列表的接口测试用例"""
         url = config['url'] + '/api/watch_store/getProductsOfStore'
         data = {"sites": ["www.ebay.com", "www.ebay.ca", "www.ebay.de", "www.ebay.it", "www.ebay.co.uk", "www.ebay.es",
                           "www.ebay.fr", "www.ebay.at", "www.ebay.ch", "www.ebay.nl", "www.ebay.ie", "www.ebay.com.au"],
@@ -19,4 +19,4 @@ class getStore(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    getStore().test_getData()
+    pass

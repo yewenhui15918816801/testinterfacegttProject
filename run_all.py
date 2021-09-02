@@ -25,7 +25,6 @@ if __name__ == "__main__":
 
     report_path = os.getcwd() + '/report'
     now = time.strftime("%Y-%m-%d %H%M%S", time.localtime(time.time()))
-
     BeautifulReport(discover).report(filename=now + 'reports', description='选品自动化测试接口', report_dir=report_path)
-    new_report = get_report()
-    send_email().send(new_report)
+    # new_report = get_report()
+    # send_email().send(new_report)

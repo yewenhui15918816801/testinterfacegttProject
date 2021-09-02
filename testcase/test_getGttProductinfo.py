@@ -8,8 +8,8 @@ ReadConfig().test_login(config['url'])
 
 
 class getGttproduct(unittest.TestCase):
-    """获取选品首页的接口测试用例"""
     def test_getData(self):
+        """获取选品首页的接口测试用例"""
         url = config['url'] + '/api/crawl_product/searchCProductByRule'
         data = {
             "sort": "first_desc",
@@ -23,4 +23,4 @@ class getGttproduct(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    getGttproduct().test_getData()
+    pass

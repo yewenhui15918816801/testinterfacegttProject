@@ -7,8 +7,8 @@ ReadConfig().test_login(config['url'])
 
 
 class getOfficeProduct(unittest.TestCase):
-    """获取新品开发列表的接口测试用例"""
     def test_getList(self):
+        """获取新品开发列表的接口测试用例"""
         url = config['url'] + "/api/offline_develope/getOfflineProductsByCondition"
         data = {"pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
@@ -17,4 +17,4 @@ class getOfficeProduct(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    getOfficeProduct().test_getList()
+    pass

@@ -12,7 +12,9 @@ class send_email:
         password = 'undhgelvdbzvgjae'
         # 接收者的账号
         msg_to = '2726493810@qq.com'
+        # 邮件的主题
         subject = '测试报告'
+        #  邮件的内容
         content = '选品系统自动化测试报告'
         msg.attach(MIMEText(content, 'plain', "utf-8"))
         msg['Subject'] = subject
@@ -30,5 +32,4 @@ class send_email:
             client.sendmail(msg_from, msg_to, msg.as_string())
             print("发送成功")
         except smtplib.SMTPException as e:
-            print("发送邮件异常")
-
+            print("发送邮件异常{}".format(e))

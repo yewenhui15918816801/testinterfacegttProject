@@ -1,15 +1,19 @@
+import json
 import logging
 import unittest
 from common.configDB import Db
 from test_readconfig import ReadConfig, session
+from common.logger import get_log
+import ast
 
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+logger = get_log('rule')
 
 
 class rule(unittest.TestCase):
-    """创建规则的接口测试用例"""
     def test_a_saverule(self):
+        """创建规则的接口测试用例"""
         url = config['url'] + '/api/search_rule/saveSearchRule'
         data = {
             "searchRule": {
@@ -19,15 +23,17 @@ class rule(unittest.TestCase):
             "name": "测试规则test"
         }
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
-        print("保存规则接口的信息:", res.text)
+        result = ast.literal_eval(res.text)
+        self.assertIn("success", result['status'])
+        logger.info("创建规则执行结果是%s" % result['status'])
 
     def test_b_getrule(self):
         """获取规则信息的接口测试用例"""
         url = config['url'] + '/api/search_rule/getSearchRules'
         res = session.post(url)
+        result = ast.literal_eval(res.text)
         self.assertIn("success", res.text)
-        print("获取规则的接口: ", res.text)
+        logger.info("获取规则的执行结果是%s" % result['status'])
 
     def test_c_updaterule(self):
         """更新规则信息的接口测试用例"""
@@ -44,7 +50,7 @@ class rule(unittest.TestCase):
         url = config['url'] + '/api/search_rule/updateSearchRule'
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        print("更新搜索规则的接口：", res.text)
+        logger.info("更新规则的执行结果是%s" % res.text)
 
     def test_d_deleterule(self):
         """删除规则信息的接口测试用例"""
@@ -54,14 +60,11 @@ class rule(unittest.TestCase):
             data = {"ruleId": r['id']}
             url = config['url'] + '/api/search_rule/deleteSearchRule'
             res = session.post(url, data=data)
-            print("删除搜索规则的接口:", res.text)
+            logger.info("删除规则的执行结果是%s" % res.text)
             self.assertIn("操作成功", res.text)
         except Exception as e:
-            print("删除规则的时候抛出了异常{}:".format(e))
+            logger.warning("删除规则的时候抛出了异常{}:".format(e))
 
 
 if __name__ == "__main__":
-    rule().test_saverule()
-    rule().test_getrule()
-    rule().test_updaterule()
-    rule().test_deleterule()
+    pass

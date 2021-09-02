@@ -7,8 +7,8 @@ ReadConfig().test_login(config['url'])
 
 
 class getUserMsg(unittest.TestCase):
-    """获取消息列表的接口测试用例"""
     def test_getData(self):
+        """获取消息列表的接口测试用例"""
         url = config['url'] + '/api/message/getUserMsg'
         data = {"pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
@@ -17,4 +17,4 @@ class getUserMsg(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    getUserMsg().test_getData()
+    pass

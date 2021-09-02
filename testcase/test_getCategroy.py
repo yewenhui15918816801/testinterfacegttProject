@@ -7,7 +7,10 @@ ReadConfig().test_login(config['url'])
 
 
 class getCategorylist(unittest.TestCase):
-    """获取选品分类的接口测试用例"""
+    """
+
+    """
+
     def test_getList(self):
         url = 'http://172.168.20.13:9001/api/category/getCategoryList'
         res = session.post(url)
