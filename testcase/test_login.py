@@ -23,6 +23,7 @@ class login(unittest.TestCase):
         logger.info("登录接口的执行结果是%s" % res.text)
         # 加入断言的结果
         self.assertIn("true", res.text)
+        return res
 
 
 if __name__ == '__main__':

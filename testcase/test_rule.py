@@ -6,8 +6,11 @@ from test_readconfig import ReadConfig, session
 from common.logger import get_log
 import ast
 
+
+
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+
 logger = get_log('rule')
 
 
@@ -24,16 +27,18 @@ class rule(unittest.TestCase):
         }
         res = session.post(url, json=data)
         result = ast.literal_eval(res.text)
-        self.assertIn("success", result['status'])
         logger.info("创建规则执行结果是%s" % result['status'])
+        self.assertIn("success", result['status'])
+
 
     def test_b_getrule(self):
         """获取规则信息的接口测试用例"""
         url = config['url'] + '/api/search_rule/getSearchRules'
         res = session.post(url)
         result = ast.literal_eval(res.text)
-        self.assertIn("success", res.text)
         logger.info("获取规则的执行结果是%s" % result['status'])
+        self.assertIn("success", res.text)
+
 
     def test_c_updaterule(self):
         """更新规则信息的接口测试用例"""
@@ -49,8 +54,9 @@ class rule(unittest.TestCase):
         }
         url = config['url'] + '/api/search_rule/updateSearchRule'
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         logger.info("更新规则的执行结果是%s" % res.text)
+        self.assertIn("success", res.text)
+
 
     def test_d_deleterule(self):
         """删除规则信息的接口测试用例"""
@@ -61,7 +67,7 @@ class rule(unittest.TestCase):
             url = config['url'] + '/api/search_rule/deleteSearchRule'
             res = session.post(url, data=data)
             logger.info("删除规则的执行结果是%s" % res.text)
-            self.assertIn("操作成功", res.text)
+            self.assertIn("success", res.text)
         except Exception as e:
             logger.warning("删除规则的时候抛出了异常{}:".format(e))
 
