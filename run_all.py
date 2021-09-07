@@ -5,6 +5,7 @@ import time
 from BeautifulReport import BeautifulReport
 from common.logger import get_log
 
+
 # 用例路径
 case_path = os.path.join(os.getcwd(), "testcase")
 logger = get_log('run_all')
@@ -25,10 +26,9 @@ if __name__ == "__main__":
                                                    pattern="test*.py",
                                                    top_level_dir=None)
 
-    report_path = os.getcwd() + '/report'
     # time.time()获取当前时间的时间戳
 
     now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
-    BeautifulReport(discover).report(filename=now + 'reports', description='选品自动化测试接口', report_dir=report_path)
+    BeautifulReport(discover).report(description='选品自动化测试接口', filename=now + 'reports', log_path="report")
     new_report = get_report()
     send_email().send(new_report)

@@ -1,4 +1,0 @@
-2021-09-02 16:56:07,619 - rule - INFO - test_rule  - 29 - 创建规则执行结果是success
-2021-09-02 16:56:07,669 - rule - INFO - test_rule  - 38 - 获取规则的执行结果是success
-2021-09-02 16:56:07,712 - rule - INFO - test_rule  - 56 - 更新规则的执行结果是{"code":0,"status":"success","msg":"操作成功","data":{"isSuccess":true}}
-2021-09-02 16:56:07,752 - rule - INFO - test_rule  - 68 - 删除规则的执行结果是{"code":0,"status":"success","msg":"操作成功","data":{"isSuccess":true}}
