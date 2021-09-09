@@ -1,3 +1,4 @@
+import json
 import unittest
 from common.logger import get_log
 from test_readconfig import ReadConfig, session
@@ -13,7 +14,8 @@ class getUserProfit(unittest.TestCase):
         data = {"user_id": "", "pageIndex": 1, "pageSize": 50, "user_ids": ["210610001"]}
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        logger.info("获取收益报表的执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("获取收益报表的执行结果是%s" % jsondata['status'])
 
 
 if __name__ == '__main__':

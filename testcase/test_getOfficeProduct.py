@@ -1,9 +1,11 @@
+import json
 import unittest
-
+from common.logger import get_log
 from test_readconfig import ReadConfig, session
 
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+logger = get_log('officeProduct')
 
 
 class getOfficeProduct(unittest.TestCase):
@@ -13,7 +15,8 @@ class getOfficeProduct(unittest.TestCase):
         data = {"pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        print("获取新品开发列表的接口：", res.text)
+        jsondata = json.loads(res.text)
+        logger.info("获取新品开发列表的接口的执行结果是:%s" % jsondata['status'])
 
 
 if __name__ == '__main__':

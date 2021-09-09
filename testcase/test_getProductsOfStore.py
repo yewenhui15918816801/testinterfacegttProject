@@ -1,9 +1,12 @@
+import json
 import unittest
 
 from test_readconfig import ReadConfig, session
+from common.logger import get_log
 
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+logger = get_log('getProductsOfStore')
 
 
 class getStore(unittest.TestCase):
@@ -15,7 +18,8 @@ class getStore(unittest.TestCase):
                 "sort": "first_desc", "tagChange": "true", "notes": [], "noteIds": [], "pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        print("获取店铺追踪的接口信息：", res.text)
+        jsondata = json.loads(res.text)
+        logger.info("获取店铺追踪的接口信息的执行结果是:%s" % jsondata['status'])
 
 
 if __name__ == '__main__':

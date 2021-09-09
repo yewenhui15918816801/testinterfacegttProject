@@ -1,0 +1,2 @@
+2021-09-09 16:10:24,836 - Gttproductinfo - INFO - test_getGttProductinfo  - 25 - 根据条件获取选品首页的接口的执行结果是success
+2021-09-09 16:10:24,859 - officeProduct - INFO - test_getOfficeProduct  - 19 - 获取新品开发列表的接口的执行结果是:success

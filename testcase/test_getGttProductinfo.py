@@ -2,9 +2,11 @@
 import json
 import unittest
 from test_readconfig import ReadConfig, session
+from common.logger import get_log
 
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+logger = get_log('Gttproductinfo')
 
 
 class getGttproduct(unittest.TestCase):
@@ -18,8 +20,9 @@ class getGttproduct(unittest.TestCase):
             "pageIndex": 2
         }
         res = session.post(url, json=data)
+        gttproductdata = json.loads(res.text)
         self.assertIn("success", res.text)
-        print("根据条件获取选品首页的接口信息：", res.text)
+        logger.info("根据条件获取选品首页的接口的执行结果是%s" % gttproductdata['status'])
 
 
 if __name__ == '__main__':

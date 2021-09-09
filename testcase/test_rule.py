@@ -6,8 +6,6 @@ from test_readconfig import ReadConfig, session
 from common.logger import get_log
 import ast
 
-
-
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
 
@@ -30,7 +28,6 @@ class rule(unittest.TestCase):
         logger.info("创建规则执行结果是%s" % result['status'])
         self.assertIn("success", result['status'])
 
-
     def test_b_getrule(self):
         """获取规则信息的接口测试用例"""
         url = config['url'] + '/api/search_rule/getSearchRules'
@@ -38,7 +35,6 @@ class rule(unittest.TestCase):
         result = ast.literal_eval(res.text)
         logger.info("获取规则的执行结果是%s" % result['status'])
         self.assertIn("success", res.text)
-
 
     def test_c_updaterule(self):
         """更新规则信息的接口测试用例"""
@@ -54,9 +50,9 @@ class rule(unittest.TestCase):
         }
         url = config['url'] + '/api/search_rule/updateSearchRule'
         res = session.post(url, json=data)
-        logger.info("更新规则的执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("更新规则的执行结果是%s" % jsondata['status'])
         self.assertIn("success", res.text)
-
 
     def test_d_deleterule(self):
         """删除规则信息的接口测试用例"""
@@ -66,7 +62,8 @@ class rule(unittest.TestCase):
             data = {"ruleId": r['id']}
             url = config['url'] + '/api/search_rule/deleteSearchRule'
             res = session.post(url, data=data)
-            logger.info("删除规则的执行结果是%s" % res.text)
+            jsondata = json.loads(res.text)
+            logger.info("删除规则的执行结果是%s" % jsondata['status'])
             self.assertIn("success", res.text)
         except Exception as e:
             logger.warning("删除规则的时候抛出了异常{}:".format(e))

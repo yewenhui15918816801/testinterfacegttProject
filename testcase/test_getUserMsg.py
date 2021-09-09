@@ -1,9 +1,11 @@
+import json
 import unittest
-
+from common.logger import get_log
 from test_readconfig import ReadConfig, session
 
 config = ReadConfig().httpconfig()
 ReadConfig().test_login(config['url'])
+logger = get_log('getUserMsg')
 
 
 class getUserMsg(unittest.TestCase):
@@ -13,7 +15,8 @@ class getUserMsg(unittest.TestCase):
         data = {"pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        print("获取消息列表的接口信息：", res.text)
+        jsondata = json.loads(res.text)
+        logger.info("获取消息列表的接口信息：%s" % jsondata['status'])
 
 
 if __name__ == '__main__':

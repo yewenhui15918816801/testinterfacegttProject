@@ -1,3 +1,4 @@
+import json
 import unittest
 from common.configDB import Db
 from test_readconfig import ReadConfig, session
@@ -17,7 +18,8 @@ class officeproduct(unittest.TestCase):
         url = config['url'] + '/api/offline_develope/importProductsFromExcel'
         res = session.post(url, files=files)
         fo.close()
-        logger.info("上传文件的执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("上传文件的执行结果是%s" % jsondata['status'])
         self.assertIn("success", res.text)
 
     def test_b_setcategory(self):
@@ -34,7 +36,8 @@ class officeproduct(unittest.TestCase):
         }
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        logger.info("设置分类的接口执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("设置分类的接口执行结果是%s" % jsondata['status'])
 
     def test_c_getproductinfo(self):
         """根据id获取线下产品的接口测试用例"""
@@ -44,14 +47,16 @@ class officeproduct(unittest.TestCase):
         data = {"id": productinfo[0]['id']}
         res = session.post(url, data=data)
         self.assertIn("success", res.text)
-        logger.info("根据id获取产品信息的接口执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("根据id获取产品信息的接口执行结果是%s" % jsondata['status'])
 
     def test_d_getallproduction(self):
         """获取全部产品的接口测试用例"""
         url = config['url'] + '/api/offline_develope/getOfflineProductsByCondition'
         res = session.post(url)
         self.assertIn("success", res.text)
-        logger.info("获取全部产品信息的接口执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("获取全部产品信息的接口执行结果是%s" % jsondata['status'])
 
     def test_e_updateproductinfo(self):
         """更新产品信息的接口测试用例"""
@@ -79,7 +84,8 @@ class officeproduct(unittest.TestCase):
         }
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
-        logger.info("修改产品信息的接口执行结果是%s" % res.text)
+        jsondata = json.loads(res.text)
+        logger.info("修改产品信息的接口执行结果是%s" % jsondata['status'])
 
     def test_f_deleteproductinfo(self):
         """删除产品信息的接口测试用例"""
@@ -91,8 +97,9 @@ class officeproduct(unittest.TestCase):
         }
         res = session.post(url, json=data)
         self.assertIn("success", res.text)
+        jsondata =json.loads(res.text)
         # print("删除产品信息的接口：", res.text)
-        logger.info("删除产品信息的接口执行结果是%s" % res.text)
+        logger.info("删除产品信息的接口执行结果是%s" % jsondata['status'])
 
 
 if __name__ == '__main__':
