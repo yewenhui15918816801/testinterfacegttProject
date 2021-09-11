@@ -28,6 +28,7 @@ class rule(unittest.TestCase):
         logger.info("创建规则执行结果是%s" % result['status'])
         self.assertIn("success", result['status'])
 
+    @unittest.skip("等下执行")
     def test_b_getrule(self):
         """获取规则信息的接口测试用例"""
         url = config['url'] + '/api/search_rule/getSearchRules'

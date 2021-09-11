@@ -1,6 +1,0 @@
-2021-09-09 16:16:07,813 - officeproduct - INFO - test_officeproduct  - 22 - 上传文件的执行结果是success
-2021-09-09 16:16:07,902 - officeproduct - INFO - test_officeproduct  - 40 - 设置分类的接口执行结果是success
-2021-09-09 16:16:07,956 - officeproduct - INFO - test_officeproduct  - 51 - 根据id获取产品信息的接口执行结果是success
-2021-09-09 16:16:07,987 - officeproduct - INFO - test_officeproduct  - 59 - 获取全部产品信息的接口执行结果是success
-2021-09-09 16:16:08,165 - officeproduct - INFO - test_officeproduct  - 88 - 修改产品信息的接口执行结果是success
-2021-09-09 16:16:08,256 - officeproduct - INFO - test_officeproduct  - 102 - 删除产品信息的接口执行结果是success

@@ -2,7 +2,7 @@
 import logging
 import os
 import time
-from logging.handlers import RotatingFileHandler
+# from logging.handlers import RotatingFileHandler
 
 path = 'D:\\testinterfaceProject'
 

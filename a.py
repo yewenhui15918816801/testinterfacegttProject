@@ -11,6 +11,7 @@ with open('demo.json', encoding='utf-8') as f:
     data = f.read()
     # 将字符串类型的json转为字典型
     dict = json.loads(data)
+    # 使用jsonpath提取出数据
     res1 = jsonpath.jsonpath(dict, '$..goods_id')
     print(len(res1))
     print(res1)

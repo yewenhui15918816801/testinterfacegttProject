@@ -1,3 +1,0 @@
-2021-09-09 16:15:32,200 - getCategory - INFO - test_getCategroy  - 21 - 获取选品分类信息的接口的执行结果是:success
-2021-09-09 16:15:34,014 - getErpCagetory - INFO - test_getErpCagetory  - 18 - 获取erp分类数据接口的执行结果是:success
-2021-09-09 16:15:34,926 - Gttproductinfo - INFO - test_getGttProductinfo  - 25 - 根据条件获取选品首页的接口的执行结果是success
