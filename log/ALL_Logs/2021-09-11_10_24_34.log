@@ -1,0 +1,3 @@
+2021-09-11 10:24:42,755 - officeProduct - INFO - test_getOfficeProduct  - 19 - 获取新品开发列表的接口的执行结果是:success
+2021-09-11 10:24:42,855 - product - INFO - test_getProducts  - 19 - 获取已开发的接口信息的执行结果是:success
+2021-09-11 10:24:43,352 - getProductsOfStore - INFO - test_getProductsOfStore  - 22 - 获取店铺追踪的接口信息的执行结果是:success
