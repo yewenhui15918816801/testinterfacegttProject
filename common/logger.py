@@ -19,7 +19,7 @@ def get_log(logger_name):
     all_log_name = all_log_path + ctime + '.log'
     all_handler = logging.FileHandler(all_log_name, encoding='utf-8')
     # 指定被处理的信息级别，低于设置级别的信息将被忽略
-    all_handler.setLevel(logging.INFO)
+    all_handler.setLevel(logging.DEBUG)
     # 创建一个handler输出到控制台
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)

@@ -1,0 +1,2 @@
+2021-09-13 16:38:38,545 - getErpCagetory - INFO - test_getErpCagetory  - 18 - 获取erp分类数据接口的执行结果是:success
+2021-09-13 16:38:39,145 - Gttproductinfo - INFO - test_getGttProductinfo  - 24 - 根据条件获取选品首页的接口的执行结果是success

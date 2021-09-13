@@ -1,0 +1,4 @@
+2021-09-13 16:07:38,701 - rule - INFO - test_rule  - 28 - 创建规则执行结果是success
+2021-09-13 16:07:38,732 - rule - INFO - test_rule  - 36 - 获取规则的执行结果是success
+2021-09-13 16:07:38,807 - rule - INFO - test_rule  - 54 - 更新规则的执行结果是success
+2021-09-13 16:07:38,836 - rule - INFO - test_rule  - 66 - 删除规则的执行结果是success

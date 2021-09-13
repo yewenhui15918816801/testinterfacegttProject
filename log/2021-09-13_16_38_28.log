@@ -1,0 +1,15 @@
+2021-09-13 16:38:28,608 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:28,991 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:29,417 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:30,030 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:33,102 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:35,063 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:35,432 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:35,962 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:36,516 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:36,921 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:38:37,444 - getCategory - INFO - test_getCategroy  - 19 - 获取选品分类信息的接口的执行结果是:success
+2021-09-13 16:38:39,634 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:39:03,240 - email - INFO - send_email  - 32 - 连接到邮箱服务器成功
+2021-09-13 16:39:03,381 - email - INFO - send_email  - 34 - 登录邮箱服务器成功
+2021-09-13 16:39:03,790 - email - INFO - send_email  - 36 - 自动化测试报告邮件发送成功

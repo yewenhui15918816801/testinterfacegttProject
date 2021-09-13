@@ -10,11 +10,8 @@ logger = get_log('getCategory')
 
 
 class getCategorylist(unittest.TestCase):
-    """
-       执行获取选品分类信息的接口的用例
-    """
-
     def test_getList(self):
+        """执行获取选品分类信息的接口的用例"""
         url = 'http://172.168.20.13:9001/api/category/getCategoryList'
         res = session.post(url)
         self.assertIn("success", res.text)

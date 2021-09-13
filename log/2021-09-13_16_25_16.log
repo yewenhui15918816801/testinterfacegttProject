@@ -1,0 +1,2 @@
+2021-09-13 16:25:16,539 - userDb - INFO - configuserDb  - 19 - {'token': '9fa6b45ebaa8cb43322d5da753f37ca3'}
+2021-09-13 16:25:17,753 - login - INFO - test_login  - 23 - 登录接口的执行结果是{"code":0,"status":"success","msg":"操作成功","data":{"isSuccess":true,"firstLogin":false}}

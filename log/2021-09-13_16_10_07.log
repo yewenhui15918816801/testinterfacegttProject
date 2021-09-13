@@ -1,0 +1,8 @@
+2021-09-13 16:10:12,446 - userProfit - INFO - test_getUserProfit  - 17 - 获取收益报表的执行结果是success
+2021-09-13 16:10:23,443 - login - INFO - test_login  - 23 - 登录接口的执行结果是{"code":0,"status":"success","msg":"操作成功","data":{"isSuccess":true,"firstLogin":false}}
+2021-09-13 16:11:03,255 - officeproduct - INFO - test_officeproduct  - 22 - 上传文件的执行结果是success
+2021-09-13 16:11:03,326 - officeproduct - INFO - test_officeproduct  - 39 - 设置分类的接口执行结果是success
+2021-09-13 16:11:03,374 - officeproduct - INFO - test_officeproduct  - 50 - 根据id获取产品信息的接口执行结果是success
+2021-09-13 16:11:03,647 - officeproduct - INFO - test_officeproduct  - 58 - 获取全部产品信息的接口执行结果是success
+2021-09-13 16:11:03,736 - officeproduct - INFO - test_officeproduct  - 87 - 修改产品信息的接口执行结果是success
+2021-09-13 16:11:03,812 - officeproduct - INFO - test_officeproduct  - 100 - 删除产品信息的接口执行结果是success

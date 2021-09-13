@@ -1,6 +1,7 @@
-import logging
-
+from common.logger import get_log
 import pymysql
+
+logger = get_log('gttdb')
 
 
 class Db():
@@ -13,7 +14,7 @@ class Db():
     # 更新数据的方法
     def update(self, sql):
         try:
-            self.cursor.execute(sql)
+            result = self.cursor.execute(sql)
             self.mydb.commit()
         except Exception as e:
             self.mydb.rollback()
@@ -39,6 +40,7 @@ class Db():
             data = self.cursor.fetchone()
         else:
             data = self.cursor.fetchall()
+        logger.info(data)
         return data
 
     # 封装删除的方法

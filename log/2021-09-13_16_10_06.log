@@ -1,0 +1,2 @@
+2021-09-13 16:10:12,390 - getProductsOfStore - INFO - test_getProductsOfStore  - 21 - 获取店铺追踪的接口信息的执行结果是:success
+2021-09-13 16:10:12,419 - getUserMsg - INFO - test_getUserMsg  - 18 - 获取消息列表的接口信息：success

@@ -1,4 +1,7 @@
 import pymysql
+from common.logger import get_log
+
+logger = get_log('userDb')
 
 
 class userDb():
@@ -14,7 +17,3 @@ class userDb():
         self.cursor.execute(sql)
         token = self.cursor.fetchone()
         return token
-
-
-
-

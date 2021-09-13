@@ -34,7 +34,7 @@ class rule(unittest.TestCase):
         res = session.post(url)
         result = ast.literal_eval(res.text)
         logger.info("获取规则的执行结果是%s" % result['status'])
-        self.assertEqual('false', result['status'])
+        self.assertEqual('success', result['status'])
 
     def test_c_updaterule(self):
         """更新规则信息的接口测试用例"""

@@ -1,0 +1,2 @@
+2021-09-13 16:10:09,564 - getCategory - INFO - test_getCategroy  - 19 - 获取选品分类信息的接口的执行结果是:success
+2021-09-13 16:10:10,929 - getErpCagetory - INFO - test_getErpCagetory  - 18 - 获取erp分类数据接口的执行结果是:success
