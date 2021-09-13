@@ -14,10 +14,9 @@ class getProduct(unittest.TestCase):
         url = config['url'] + '/api/develope_product/getProducts'
         data = {"title": "", "pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("获取已开发的接口信息的执行结果是:%s" % jsondata['status'])
-        # print("获取已开发的接口信息：", jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
 
 if __name__ == '__main__':

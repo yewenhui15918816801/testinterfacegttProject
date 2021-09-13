@@ -16,6 +16,7 @@ class getERP(unittest.TestCase):
         res = session.post(url)
         jsondata = json.loads(res.text)
         logger.info("获取erp分类数据接口的执行结果是:%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
 
 if __name__ == '__main__':

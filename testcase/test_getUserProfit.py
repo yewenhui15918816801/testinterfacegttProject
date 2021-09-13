@@ -13,9 +13,9 @@ class getUserProfit(unittest.TestCase):
         url = config['url'] + '/api/develope_product/getUserProfit'
         data = {"user_id": "", "pageIndex": 1, "pageSize": 50, "user_ids": ["210610001"]}
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("获取收益报表的执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
 
 if __name__ == '__main__':

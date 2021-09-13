@@ -17,10 +17,9 @@ class getStore(unittest.TestCase):
                           "www.ebay.fr", "www.ebay.at", "www.ebay.ch", "www.ebay.nl", "www.ebay.ie", "www.ebay.com.au"],
                 "sort": "first_desc", "tagChange": "true", "notes": [], "noteIds": [], "pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("获取店铺追踪的接口信息的执行结果是:%s" % jsondata['status'])
-
+        self.assertEqual("success", jsondata['status'])
 
 if __name__ == '__main__':
     pass

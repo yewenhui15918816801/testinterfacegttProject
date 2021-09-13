@@ -14,9 +14,9 @@ class getUserMsg(unittest.TestCase):
         url = config['url'] + '/api/message/getUserMsg'
         data = {"pageIndex": 1, "pageSize": 50}
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("获取消息列表的接口信息：%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
 
 if __name__ == '__main__':

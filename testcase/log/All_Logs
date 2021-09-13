@@ -1,0 +1,4 @@
+INFO - 2021-09-13 14:18:12,710 - process: 9568 - test_rule.py - rule - 28 - test_rule - 创建规则执行结果是success
+INFO - 2021-09-13 14:18:12,731 - process: 9568 - test_rule.py - rule - 36 - test_rule - 获取规则的执行结果是success
+INFO - 2021-09-13 14:18:12,779 - process: 9568 - test_rule.py - rule - 54 - test_rule - 更新规则的执行结果是success
+INFO - 2021-09-13 14:18:12,857 - process: 9568 - test_rule.py - rule - 66 - test_rule - 删除规则的执行结果是success

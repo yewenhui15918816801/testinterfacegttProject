@@ -20,7 +20,7 @@ class officeproduct(unittest.TestCase):
         fo.close()
         jsondata = json.loads(res.text)
         logger.info("上传文件的执行结果是%s" % jsondata['status'])
-        self.assertIn("success", res.text)
+        self.assertEqual("success", jsondata['status'])
 
     def test_b_setcategory(self):
         """设置分类的接口测试用例"""
@@ -35,9 +35,9 @@ class officeproduct(unittest.TestCase):
             ]
         }
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("设置分类的接口执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
     def test_c_getproductinfo(self):
         """根据id获取线下产品的接口测试用例"""
@@ -46,17 +46,17 @@ class officeproduct(unittest.TestCase):
         productinfo = Db().getProductID(sql=sql)
         data = {"id": productinfo[0]['id']}
         res = session.post(url, data=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("根据id获取产品信息的接口执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
     def test_d_getallproduction(self):
         """获取全部产品的接口测试用例"""
         url = config['url'] + '/api/offline_develope/getOfflineProductsByCondition'
         res = session.post(url)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("获取全部产品信息的接口执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
     def test_e_updateproductinfo(self):
         """更新产品信息的接口测试用例"""
@@ -83,9 +83,9 @@ class officeproduct(unittest.TestCase):
             "description": "这是一段bdptest的描述"
         }
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
         jsondata = json.loads(res.text)
         logger.info("修改产品信息的接口执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
     def test_f_deleteproductinfo(self):
         """删除产品信息的接口测试用例"""
@@ -96,10 +96,9 @@ class officeproduct(unittest.TestCase):
             "ids": [productinfo[0]['id']]
         }
         res = session.post(url, json=data)
-        self.assertIn("success", res.text)
-        jsondata =json.loads(res.text)
-        # print("删除产品信息的接口：", res.text)
+        jsondata = json.loads(res.text)
         logger.info("删除产品信息的接口执行结果是%s" % jsondata['status'])
+        self.assertEqual("success", jsondata['status'])
 
 
 if __name__ == '__main__':

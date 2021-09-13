@@ -21,8 +21,8 @@ class getGttproduct(unittest.TestCase):
         }
         res = session.post(url, json=data)
         gttproductdata = json.loads(res.text)
-        self.assertIn("success", res.text)
         logger.info("根据条件获取选品首页的接口的执行结果是%s" % gttproductdata['status'])
+        self.assertEqual("success", gttproductdata['status'])
 
 
 if __name__ == '__main__':

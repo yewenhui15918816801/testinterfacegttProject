@@ -26,16 +26,15 @@ class rule(unittest.TestCase):
         res = session.post(url, json=data)
         result = ast.literal_eval(res.text)
         logger.info("创建规则执行结果是%s" % result['status'])
-        self.assertIn("success", result['status'])
+        self.assertEqual("success", result['status'])
 
-    @unittest.skip("等下执行")
     def test_b_getrule(self):
         """获取规则信息的接口测试用例"""
         url = config['url'] + '/api/search_rule/getSearchRules'
         res = session.post(url)
         result = ast.literal_eval(res.text)
         logger.info("获取规则的执行结果是%s" % result['status'])
-        self.assertIn("success", res.text)
+        self.assertEqual('false', result['status'])
 
     def test_c_updaterule(self):
         """更新规则信息的接口测试用例"""
@@ -53,7 +52,7 @@ class rule(unittest.TestCase):
         res = session.post(url, json=data)
         jsondata = json.loads(res.text)
         logger.info("更新规则的执行结果是%s" % jsondata['status'])
-        self.assertIn("success", res.text)
+        self.assertEqual("success", jsondata['status'])
 
     def test_d_deleterule(self):
         """删除规则信息的接口测试用例"""
@@ -65,7 +64,7 @@ class rule(unittest.TestCase):
             res = session.post(url, data=data)
             jsondata = json.loads(res.text)
             logger.info("删除规则的执行结果是%s" % jsondata['status'])
-            self.assertIn("success", res.text)
+            self.assertEqual("success", jsondata['status'])
         except Exception as e:
             logger.warning("删除规则的时候抛出了异常{}:".format(e))
 

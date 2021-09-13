@@ -26,10 +26,10 @@ class send_email:
         msg.attach(att3)
         try:
             client = smtplib.SMTP_SSL('smtp.qq.com', smtplib.SMTP_SSL_PORT)
-            print("连接到服务器成功")
+            print("连接到邮箱服务器成功")
             client.login(msg_from, password)
-            print("登录成功")
+            print("登录邮箱服务器成功")
             client.sendmail(msg_from, msg_to, msg.as_string())
-            print("发送成功")
+            print("自动化测试报告邮件发送成功")
         except smtplib.SMTPException as e:
             print("发送邮件异常{}".format(e))

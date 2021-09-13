@@ -1,9 +1,0 @@
-2021-09-11 10:25:22,273 - officeproduct - INFO - test_officeproduct  - 22 - 上传文件的执行结果是success
-2021-09-11 10:25:22,319 - officeproduct - INFO - test_officeproduct  - 40 - 设置分类的接口执行结果是success
-2021-09-11 10:25:22,373 - officeproduct - INFO - test_officeproduct  - 51 - 根据id获取产品信息的接口执行结果是success
-2021-09-11 10:25:22,388 - officeproduct - INFO - test_officeproduct  - 59 - 获取全部产品信息的接口执行结果是success
-2021-09-11 10:25:22,426 - officeproduct - INFO - test_officeproduct  - 88 - 修改产品信息的接口执行结果是success
-2021-09-11 10:25:22,504 - officeproduct - INFO - test_officeproduct  - 102 - 删除产品信息的接口执行结果是success
-2021-09-11 10:25:22,527 - rule - INFO - test_rule  - 28 - 创建规则执行结果是success
-2021-09-11 10:25:22,589 - rule - INFO - test_rule  - 55 - 更新规则的执行结果是success
-2021-09-11 10:25:22,605 - rule - INFO - test_rule  - 67 - 删除规则的执行结果是success
